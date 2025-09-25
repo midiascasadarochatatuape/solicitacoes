@@ -134,7 +134,7 @@ public function store(Request $request)
     Orcamento::create($validatedData);
 
     return redirect()->route('solicitacoes.index')
-        ->with('success', 'Solicitação criado com sucesso.');
+        ->with('success', 'Solicitação criada com sucesso.');
 }
 
     /**
