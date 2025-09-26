@@ -480,7 +480,7 @@ function updatePagination(pagination) {
 // Iniciar atualização automática quando a página carregar
 document.addEventListener('DOMContentLoaded', function() {
     // Atualizar a cada 15 segundos (15000ms)
-    autoUpdateInterval = setInterval(updateSolicitacoes, 1000);
+    autoUpdateInterval = setInterval(updateSolicitacoes, 10000);
 
     // Definir tempo inicial
     const lastUpdateElement = document.getElementById('last-update');
@@ -498,13 +498,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 statusElement.className = 'text-warning';
             }
         } else {
-            autoUpdateInterval = setInterval(updateSolicitacoes, 15000);
+            autoUpdateInterval = setInterval(updateSolicitacoes, 10000);
             if (statusElement) {
                 statusElement.textContent = 'Ativa';
                 statusElement.className = 'text-success';
             }
             // Atualizar imediatamente quando retornar à página
-            setTimeout(updateSolicitacoes, 10000);
+            setTimeout(updateSolicitacoes, 1000);
         }
     });
 });
