@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 statusElement.className = 'text-success';
             }
             // Atualizar imediatamente quando retornar à página
-            setTimeout(updateSolicitacoes, 1000);
+            setTimeout(updateSolicitacoes, 10000);
         }
     });
 });
