@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 use App\Http\Controllers\OrcamentoController;
 
@@ -18,4 +19,9 @@ Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logou
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/solicitacoes', [OrcamentoController::class, 'index'])->name('admin.solicitacoes.index');
+});
+
+Route::get('/make-storage-link', function () {
+    Artisan::call('storage:link');
+    return 'Link simbólico criado!';
 });
