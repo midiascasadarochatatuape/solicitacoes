@@ -407,8 +407,11 @@ function updateTable(orcamentos) {
 
         let statusClass = '';
         switch(orcamento.status) {
-            case 'Em análise':
+            case 'Nova solicitação':
                 statusClass = 'text-warning fw-bold';
+                break;
+            case 'Em análise':
+                statusClass = 'text-info fw-bold';
                 break;
             case 'Aprovado. Em processo de compra':
                 statusClass = 'text-aprovado fw-bold';
@@ -480,7 +483,7 @@ function updatePagination(pagination) {
 // Iniciar atualização automática quando a página carregar
 document.addEventListener('DOMContentLoaded', function() {
     // Atualizar a cada 15 segundos (15000ms)
-    autoUpdateInterval = setInterval(updateSolicitacoes, 10000);
+    autoUpdateInterval = setInterval(updateSolicitacoes, 1000);
 
     // Definir tempo inicial
     const lastUpdateElement = document.getElementById('last-update');
