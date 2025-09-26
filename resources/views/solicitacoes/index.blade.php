@@ -275,7 +275,8 @@
                             <td>
                                 @php
                                     $statusClass = match($orcamento->status) {
-                                        'Em análise'                                  => 'text-warning fw-bold',
+                                        'Nova solicitação'                            => 'text-warning fw-bold',
+                                        'Em análise'                                  => 'text-info fw-bold',
                                         'Aprovado. Em processo de compra'             => 'text-aprovado fw-bold',
                                         'Aprovado com alterações'                     => 'text-apcalt fw-bold',
                                         'Reprovado, falar com a Angélica'             => 'text-reprovado fw-bold',

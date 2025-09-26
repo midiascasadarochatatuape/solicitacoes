@@ -496,6 +496,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (tipoCompraRadio.checked) {
             camposCompra.style.display = 'block';
             camposServico.style.display = 'none';
+
+            // Remove required dos campos de serviço
+            document.querySelectorAll('#campos_servico input, #campos_servico textarea').forEach(input => {
+                input.required = false;
+            });
+
+            // Adiciona required aos campos de compra
+            document.querySelectorAll('#campos_compra input[required], #campos_compra textarea[required]').forEach(input => {
+                input.required = true;
+            });
+
             // Limpa os campos de serviço
             document.querySelectorAll('[name^="orcamento_imagem_"]').forEach(input => {
                 input.value = '';
@@ -504,6 +515,12 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (tipoServicoRadio.checked) {
             camposCompra.style.display = 'none';
             camposServico.style.display = 'block';
+
+            // Remove required dos campos de compra
+            document.querySelectorAll('#campos_compra input, #campos_compra textarea').forEach(input => {
+                input.required = false;
+            });
+
             // Limpa os campos de compra
             document.querySelectorAll('[name^="link_concorrente_"]').forEach(input => input.value = '');
         }
