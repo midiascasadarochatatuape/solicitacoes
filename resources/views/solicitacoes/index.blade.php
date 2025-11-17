@@ -33,7 +33,7 @@
         <div class="card-body px-0">
             <form action="{{ route('solicitacoes.index') }}" method="GET" class="row g-3">
                 <!-- Filtros -->
-                <div class="d-flex flex-column flex-md-row gap-3">
+                <div class="d-flex flex-column flex-md-row gap-md-3 gap-1">
                     <div class="flex-grow-1">
                         <label for="departamento" class="form-label">Departamento</label>
                         <select name="departamento" id="departamento" class="form-select">
