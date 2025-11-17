@@ -294,7 +294,7 @@
                             <h6 class="mb-0">Informações de Compra</h6>
                         </div>
                         <div class="card-body">
-                            <p><strong>Links dos Concorrentes:</strong></p>
+                            <p><strong>Links:</strong></p>
                             <ul>
                                 <li class="mb-3">Link 1: <span id="preview-link1"></span> <span id="preview-qtde1"></span></li>
                                 <li class="mb-3">Link 2: <span id="preview-link2"></span> <span id="preview-qtde2"></span></li>
