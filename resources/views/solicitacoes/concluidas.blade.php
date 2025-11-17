@@ -82,14 +82,14 @@
                     <div class="flex-grow-1">
                         <label for="sort" class="form-label">Ordenar por</label>
                         <select name="sort" id="sort" class="form-select">
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('created_at', 'desc') }}">Data (Mais recente)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('created_at', 'asc') }}">Data (Mais antiga)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('nome', 'asc') }}">Nome (A-Z)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('nome', 'desc') }}">Nome (Z-A)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('tipo', 'asc') }}">Tipo (A-Z)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('tipo', 'desc') }}">Tipo (Z-A)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('departamento', 'asc') }}">Departamento (A-Z)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('departamento', 'desc') }}">Departamento (Z-A)</option>
+                            <option value="created_at-desc" {{ request('sort') == 'created_at-desc' ? 'selected' : '' }}>Data (Mais recente)</option>
+                            <option value="created_at-asc" {{ request('sort') == 'created_at-asc' ? 'selected' : '' }}>Data (Mais antiga)</option>
+                            <option value="nome-asc" {{ request('sort') == 'nome-asc' ? 'selected' : '' }}>Nome (A-Z)</option>
+                            <option value="nome-desc" {{ request('sort') == 'nome-desc' ? 'selected' : '' }}>Nome (Z-A)</option>
+                            <option value="tipo-asc" {{ request('sort') == 'tipo-asc' ? 'selected' : '' }}>Tipo (A-Z)</option>
+                            <option value="tipo-desc" {{ request('sort') == 'tipo-desc' ? 'selected' : '' }}>Tipo (Z-A)</option>
+                            <option value="departamento-asc" {{ request('sort') == 'departamento-asc' ? 'selected' : '' }}>Departamento (A-Z)</option>
+                            <option value="departamento-desc" {{ request('sort') == 'departamento-desc' ? 'selected' : '' }}>Departamento (Z-A)</option>
                         </select>
                     </div>
 
@@ -235,6 +235,7 @@
                     </tbody>
                 </table>
             </div>
+
 
             <div class="d-flex justify-content-center mt-4">
                 {{ $orcamentos->links() }}

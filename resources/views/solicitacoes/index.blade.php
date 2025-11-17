@@ -20,8 +20,8 @@
         </div>
     @endif
 
-    {{-- Botão de Filtros Mobile --}}
-    @auth @if(auth()->user()->is_admin)
+    {{-- Botão de Filtros Mobile
+    @auth @if(auth()->user()->is_admin)--}}
     <div class="d-md-none mb-3">
         <button type="button" class="btn btn-primary w-100" data-bs-toggle="collapse" data-bs-target="#filtrosMobile">
             <span class="material-symbols-outlined align-middle me-1">filter_alt</span>
@@ -92,12 +92,12 @@
                     <div class="flex-grow-1">
                         <label for="sort" class="form-label">Ordenar por</label>
                         <select name="sort" id="sort" class="form-select">
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('created_at', 'desc') }}">Data (Mais recente)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('created_at', 'asc') }}">Data (Mais antiga)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('nome', 'asc') }}">Nome (A-Z)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('nome', 'desc') }}">Nome (Z-A)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('tipo', 'asc') }}">Tipo (A-Z)</option>
-                            <option value="{{ App\Helpers\UrlHelper::sortUrl('tipo', 'desc') }}">Tipo (Z-A)</option>
+                            <option value="created_at-desc" {{ request('sort') == 'created_at-desc' ? 'selected' : '' }}>Data (Mais recente)</option>
+                            <option value="created_at-asc" {{ request('sort') == 'created_at-asc' ? 'selected' : '' }}>Data (Mais antiga)</option>
+                            <option value="nome-asc" {{ request('sort') == 'nome-asc' ? 'selected' : '' }}>Nome (A-Z)</option>
+                            <option value="nome-desc" {{ request('sort') == 'nome-desc' ? 'selected' : '' }}>Nome (Z-A)</option>
+                            <option value="tipo-asc" {{ request('sort') == 'tipo-asc' ? 'selected' : '' }}>Tipo (A-Z)</option>
+                            <option value="tipo-desc" {{ request('sort') == 'tipo-desc' ? 'selected' : '' }}>Tipo (Z-A)</option>
                             <option value="prioridade-asc" {{ request('sort') == 'prioridade-asc' ? 'selected' : '' }}>Prioridade (A-Z)</option>
                             <option value="prioridade-desc" {{ request('sort') == 'prioridade-desc' ? 'selected' : '' }}>Prioridade (Z-A)</option>
                             <option value="departamento-asc" {{ request('sort') == 'departamento-asc' ? 'selected' : '' }}>Departamento (A-Z)</option>
@@ -127,7 +127,7 @@
             </form>
         </div>
     </div>
-    @endif @endauth
+   {{--  @endif @endauth --}}
 
     <div class="card border-0">
         <div class="card-body p-0">
